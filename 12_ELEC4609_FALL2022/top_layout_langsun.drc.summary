@@ -1,0 +1,90 @@
+
+
+==================================================================================
+=== CALIBRE::DRC-H SUMMARY REPORT
+===
+Execution Date/Time:       Sat Oct 15 17:34:03 2022
+Calibre Version:           v2015.3_17.12    Wed Aug 5 13:26:19 PDT 2015
+Rule File Pathname:        /home/langsun/cusoipdk/_calibreDRC.rul_
+Rule File Title:           
+Layout System:             GDS
+Layout Path(s):            top_layout_langsun.calibre.db
+Layout Primary Cell:       top_layout_langsun
+Current Directory:         /home/langsun/cusoipdk
+User Name:                 langsun
+Maximum Results/RuleCheck: 1000
+Maximum Result Vertices:   4096
+DRC Results Database:      top_layout_langsun.drc.results (ASCII)
+Layout Depth:              ALL
+Text Depth:                PRIMARY
+Summary Report File:       top_layout_langsun.drc.summary (REPLACE)
+Geometry Flagging:         ACUTE = NO  SKEW = NO  ANGLED = NO  OFFGRID = NO
+                           NONSIMPLE POLYGON = NO  NONSIMPLE PATH = NO
+Excluded Cells:           
+CheckText Mapping:         COMMENT TEXT + RULE FILE INFORMATION
+Layers:                    MEMORY-BASED
+Keep Empty Checks:         YES
+----------------------------------------------------------------------------------
+--- RUNTIME WARNINGS
+---
+----------------------------------------------------------------------------------
+--- ORIGINAL LAYER STATISTICS
+---
+LAYER METAL ..... TOTAL Original Geometry Count = 258 (908)
+LAYER CONTACT ... TOTAL Original Geometry Count = 56  (310)
+LAYER DWELL ..... TOTAL Original Geometry Count = 102 (474)
+LAYER POLY ...... TOTAL Original Geometry Count = 365 (778)
+LAYER Pplus ..... TOTAL Original Geometry Count = 5   (49)
+LAYER NWELL ..... TOTAL Original Geometry Count = 5   (49)
+LAYER Nplus ..... TOTAL Original Geometry Count = 0   (0)
+LAYER ART ....... TOTAL Original Geometry Count = 45  (45)
+----------------------------------------------------------------------------------
+--- RULECHECK RESULTS STATISTICS
+---
+RULECHECK METAL_WIDTH ........................ TOTAL Result Count = 0 (0)
+RULECHECK METAL_SPACING ...................... TOTAL Result Count = 0 (0)
+RULECHECK POLY_WIDTH ......................... TOTAL Result Count = 0 (0)
+RULECHECK POLY_SPACING ....................... TOTAL Result Count = 0 (0)
+RULECHECK FIELD_POLY_DWELL_SPACING ........... TOTAL Result Count = 0 (0)
+RULECHECK FIELD_POLY_SOURCE_DRAIN_TOUCHING ... TOTAL Result Count = 0 (0)
+RULECHECK DWELL_WIDTH ........................ TOTAL Result Count = 0 (0)
+RULECHECK DWELL_SPACING ...................... TOTAL Result Count = 0 (0)
+RULECHECK CONTACT_WIDTH ...................... TOTAL Result Count = 0 (0)
+RULECHECK CONTACT_METAL_OVERLAP .............. TOTAL Result Count = 0 (0)
+RULECHECK CONTACT_POLY_OVERLAP ............... TOTAL Result Count = 0 (0)
+RULECHECK CHANNEL_CONTACT_SPACING ............ TOTAL Result Count = 0 (0)
+RULECHECK CONTACT_D_WELL_OVERLAP ............. TOTAL Result Count = 0 (0)
+RULECHECK NWELL_DWELL_OVERLAP.1 .............. TOTAL Result Count = 0 (0)
+RULECHECK NWELL_DWELL_OVERLAP.2 .............. TOTAL Result Count = 0 (0)
+RULECHECK Pplus_NWELL_OVERLAP.2 .............. TOTAL Result Count = 0 (0)
+RULECHECK Pplus_P_SOURCE_DRAIN_ENCLOSURE ..... TOTAL Result Count = 0 (0)
+RULECHECK Pplus_DWELL_OVERLAP.2 .............. TOTAL Result Count = 0 (0)
+RULECHECK Pplus_N_SOURCE_DRAIN_SPACING ....... TOTAL Result Count = 0 (0)
+RULECHECK BAD_GATE.1 ......................... TOTAL Result Count = 0 (0)
+RULECHECK BAD_GATE.2 ......................... TOTAL Result Count = 0 (0)
+RULECHECK BAD_GATE.3 ......................... TOTAL Result Count = 0 (0)
+RULECHECK Grid.1 ............................. TOTAL Result Count = 0 (0)
+RULECHECK Grid.2 ............................. TOTAL Result Count = 0 (0)
+RULECHECK Grid.3 ............................. TOTAL Result Count = 0 (0)
+RULECHECK Grid.4 ............................. TOTAL Result Count = 0 (0)
+RULECHECK Grid.5 ............................. TOTAL Result Count = 0 (0)
+RULECHECK Grid.6 ............................. TOTAL Result Count = 0 (0)
+RULECHECK Grid.7 ............................. TOTAL Result Count = 0 (0)
+RULECHECK ART_TO_METAL ....................... TOTAL Result Count = 0 (0)
+RULECHECK ART_TO_POLY ........................ TOTAL Result Count = 0 (0)
+RULECHECK ART_TO_DWELL ....................... TOTAL Result Count = 0 (0)
+RULECHECK ART_TO_NPLUS ....................... TOTAL Result Count = 0 (0)
+RULECHECK ART_TO_PPLUS ....................... TOTAL Result Count = 0 (0)
+RULECHECK ART_TO_CONTACT ..................... TOTAL Result Count = 0 (0)
+RULECHECK ART_TO_NWELL ....................... TOTAL Result Count = 0 (0)
+----------------------------------------------------------------------------------
+--- RULECHECK RESULTS STATISTICS (BY CELL)
+---
+----------------------------------------------------------------------------------
+--- SUMMARY
+---
+TOTAL CPU Time:                  0
+TOTAL REAL Time:                 0
+TOTAL Original Layer Geometries: 836 (2613)
+TOTAL DRC RuleChecks Executed:   36
+TOTAL DRC Results Generated:     0 (0)

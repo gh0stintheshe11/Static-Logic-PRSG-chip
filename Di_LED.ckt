@@ -1,0 +1,1 @@
+.model Di_LED D (IS=4e-20 RS=0 BV=5 IBV=100u CJO=0 M=0.5 N=2)
