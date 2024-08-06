@@ -5,3 +5,5 @@
 - source design
 - die shots
 - post fab test results
+
+![die shot](/G12C1.jpg)
