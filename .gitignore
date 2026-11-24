@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Cadence session leftovers (if the libraries are opened in Virtuoso)
+*.cdslck
+*.cdslck.*
+CDS.log*
+.cadence/
+
+# OS
+.DS_Store

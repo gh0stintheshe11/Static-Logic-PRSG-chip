@@ -1,0 +1,72 @@
+# Gate-level netlist recovered from 12_ELEC4609_FALL2022/12_ELEC4609_FALL2022.gds
+# (KLayout extraction -> static-CMOS gate recognition -> structural naming)
+# Sizes are W/L in um per transistor (P = PMOS, N = NMOS).
+# Register: 4 stages, feedback taps = Q0, Q3 (MINIPAD), output = last stage Q (MINIPAD).
+
+## RC clock generator (Fig. 4 of the spec)
+  OSC1     = INV  (C1                )  [P 9.6/4.8, N 4.8/4.8]
+  C2       = INV  (OSC1              )  [P 9.6/4.8, N 4.8/4.8]
+  OSC3     = INV  (C2                )  [P 9.6/4.8, N 4.8/4.8]
+  PHI      = INV  (OSC3              )  [P 9.6/4.8, N 4.8/4.8]
+
+## Flip-flop 0: D=D0, Q=Q0
+  S0_CKB   = INV  (PHI               )  [P 9.6/4.8, N 4.8/4.8]
+  S0_CK    = INV  (S0_CKB            )  [P 9.6/4.8, N 4.8/4.8]
+  S0_M1    = NAND2(S0_CKB, D0        )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S0_M2    = NAND2(S0_CKB, S0_M1     )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S0_MQ    = NAND2(S0_MQB, S0_M1     )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S0_MQB   = NAND2(S0_MQ, S0_M2      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S0_S1    = NAND2(S0_MQ, S0_CK      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S0_S2    = NAND2(S0_CK, S0_S1      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  Q0       = NAND2(S0_QB, S0_S1      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S0_QB    = NAND2(Q0, S0_S2         )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+
+## Flip-flop 1: D=Q0, Q=Q1
+  S1_CKB   = INV  (PHI               )  [P 9.6/4.8, N 4.8/4.8]
+  S1_CK    = INV  (S1_CKB            )  [P 9.6/4.8, N 4.8/4.8]
+  S1_M1    = NAND2(S1_CKB, Q0        )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S1_M2    = NAND2(S1_CKB, S1_M1     )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S1_MQ    = NAND2(S1_MQB, S1_M1     )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S1_MQB   = NAND2(S1_MQ, S1_M2      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S1_S1    = NAND2(S1_CK, S1_MQ      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S1_S2    = NAND2(S1_CK, S1_S1      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  Q1       = NAND2(S1_QB, S1_S1      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S1_QB    = NAND2(Q1, S1_S2         )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+
+## Flip-flop 2: D=Q1, Q=Q2
+  S2_CKB   = INV  (PHI               )  [P 9.6/4.8, N 4.8/4.8]
+  S2_CK    = INV  (S2_CKB            )  [P 9.6/4.8, N 4.8/4.8]
+  S2_M1    = NAND2(Q1, S2_CKB        )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S2_M2    = NAND2(S2_CKB, S2_M1     )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S2_MQ    = NAND2(S2_MQB, S2_M1     )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S2_MQB   = NAND2(S2_MQ, S2_M2      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S2_S1    = NAND2(S2_MQ, S2_CK      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S2_S2    = NAND2(S2_CK, S2_S1      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  Q2       = NAND2(S2_QB, S2_S1      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S2_QB    = NAND2(Q2, S2_S2         )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+
+## Flip-flop 3: D=Q2, Q=MINIPAD
+  S3_CKB   = INV  (PHI               )  [P 9.6/4.8, N 4.8/4.8]
+  S3_CK    = INV  (S3_CKB            )  [P 9.6/4.8, N 4.8/4.8]
+  S3_M1    = NAND2(S3_CKB, Q2        )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S3_M2    = NAND2(S3_CKB, S3_M1     )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S3_MQ    = NAND2(S3_MQB, S3_M1     )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S3_MQB   = NAND2(S3_MQ, S3_M2      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S3_S1    = NAND2(S3_MQ, S3_CK      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S3_S2    = NAND2(S3_CK, S3_S1      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  MINIPAD  = NAND2(S3_QB, S3_S1      )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  S3_QB    = NAND2(S3_S2, MINIPAD    )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+
+## Feedback: D0 = NOR(XOR(tap_a, tap_b), RST)
+  X1       = NAND2(Q0, MINIPAD       )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  X2       = NAND2(Q0, X1            )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  X3       = NAND2(X1, MINIPAD       )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  XOR      = NAND2(X2, X3            )  [P 9.6/4.8, P 9.6/4.8, N 4.8/4.8, N 4.8/4.8]
+  D0       = NOR2 (XOR, RST          )  [N 4.8/4.8, N 4.8/4.8, P 38.4/4.8, P 38.4/4.8]
+
+## Discrete transistors (not part of a logic gate)
+  MN D=VSS    G=MINIPAD  S=Vo     W/L=321.6/4.8  at (506.4, -427.2)  open-drain LED driver (gate = MINIPAD = Q3)
+  MN D=VSS    G=VSS      S=C2     W/L=220.8/4.8  at (48, -187.2)  grounded-gate NMOS input protection on pad C2
+  MN D=C1     G=VSS      S=VSS    W/L=220.8/4.8  at (48, -148.8)  grounded-gate NMOS input protection on pad C1
+  MN D=RST    G=VSS      S=VSS    W/L=220.8/4.8  at (480, -187.2)  grounded-gate NMOS input protection on pad RST
+  MN D=C1     G=VDD      S=OSC3   W/L=28.8/4.8  at (139.2, -57.6)  oscillator feedback resistor M1 (gate = VDD), C1 <-> OSC3
